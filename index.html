@@ -6,39 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ALEM CRIS O. SAQUIN | Student Portfolio</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
             scroll-behavior: smooth;
         }
 
+        /* CUSTOM SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060b13;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 5px;
+            border: 2px solid #060b13;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38bdf8;
+        }
+
         body {
-            background: #f1f5f9;
-            color: #1e293b;
+            background: #060b13;
+            color: #f8fafc;
+            overflow-x: hidden;
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(130, 56, 248, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
         }
 
         /* NAVIGATION */
 
         nav {
-            background: #0f172a;
-            color: white;
+            background: rgba(11, 15, 25, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 8%;
+            padding: 12px 35px;
             position: fixed;
-            width: 100%;
-            top: 0;
+            width: 90%;
+            max-width: 1200px;
+            margin: 15px auto;
+            left: 0;
+            right: 0;
             z-index: 1000;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
         }
 
         nav h2 {
             color: #38bdf8;
-            font-size: 28px;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
         nav ul {
@@ -49,9 +82,10 @@
 
         nav ul li a {
             text-decoration: none;
-            color: white;
-            transition: 0.3s;
-            font-weight: bold;
+            color: #94a3b8;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 15px;
         }
 
         nav ul li a:hover {
@@ -67,102 +101,118 @@
             align-items: center;
             text-align: center;
             flex-direction: column;
-            background: linear-gradient(to right, #0f172a, #1e293b);
+            background: transparent;
             color: white;
             padding: 20px;
+            position: relative;
         }
 
         /* PROFILE PICTURE */
 
         .profile-pic {
-            width: 230px;
-            height: 230px;
+            width: 200px;
+            height: 200px;
             object-fit: cover;
             border-radius: 50%;
-            border: 6px solid #2816e9;
-            padding: 6px;
-            background: white;
+            border: 4px solid #38bdf8;
+            padding: 4px;
+            background: #0f172a;
             margin-bottom: 25px;
-
             box-shadow:
-                0 0 15px rgba(130, 56, 248, 0.91),
-                0 0 30px rgba(88, 56, 248, 0.3);
-
-            transition: 0.4s ease;
+                0 0 20px rgba(56, 189, 248, 0.3),
+                0 0 40px rgba(56, 189, 248, 0.1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .profile-pic:hover {
-            transform: scale(1.06) rotate(2deg);
-
+            transform: scale(1.05) rotate(2deg);
             box-shadow:
-                0 0 20px rgba(56, 189, 248, 0.9),
-                0 0 50px rgba(56, 189, 248, 0.7);
+                0 0 25px rgba(56, 189, 248, 0.6),
+                0 0 60px rgba(56, 189, 248, 0.3);
+            border-color: #818cf8;
         }
 
         /* HOME TEXT */
 
         .home h1 {
-            font-size: 55px;
-            animation: glow 2s infinite alternate;
-        }
-
-        @keyframes glow {
-
-            from {
-                text-shadow: 0 0 10px #38bdf8;
-            }
-
-            to {
-                text-shadow:
-                    0 0 20px #38bdf8,
-                    0 0 40px #38bdf8;
-            }
+            font-size: 56px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #ffffff, #93c5fd, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
         }
 
         .home h3 {
-            margin-top: 10px;
+            margin-top: 5px;
             color: #38bdf8;
-            font-size: 28px;
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .home p {
-            margin-top: 20px;
-            max-width: 700px;
+            margin-top: 15px;
+            max-width: 650px;
             line-height: 1.8;
-            font-size: 18px;
+            font-size: 17px;
+            color: #94a3b8;
         }
 
         /* BUTTON */
 
         .btn {
             margin-top: 30px;
-            padding: 14px 35px;
-            background: #38bdf8;
+            padding: 12px 35px;
+            background: linear-gradient(to right, #38bdf8, #6366f1);
             color: white;
             text-decoration: none;
             border-radius: 40px;
-            transition: 0.3s ease;
-            font-weight: bold;
-            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 15px;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
         }
 
         .btn:hover {
-            background: #0ea5e9;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.4);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.5);
+            background: linear-gradient(to right, #0ea5e9, #4f46e5);
         }
 
         /* SECTIONS */
 
         section {
             padding: 100px 10%;
+            max-width: 1300px;
+            margin: 0 auto;
         }
 
         section h2 {
             text-align: center;
-            margin-bottom: 40px;
-            color: #0f172a;
-            font-size: 40px;
+            margin-bottom: 50px;
+            color: white;
+            font-size: 36px;
+            font-weight: 800;
+            position: relative;
+            background: linear-gradient(to right, #ffffff, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 20%;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(to right, #38bdf8, #6366f1);
+            border-radius: 2px;
         }
 
         /* ABOUT */
@@ -174,13 +224,14 @@
         }
 
         .about-card {
-            background: white;
+            background: rgba(17, 26, 46, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            line-height: 1.8;
-            border: 1px solid rgba(0, 0, 0, 0.03);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
             gap: 15px;
@@ -188,89 +239,109 @@
 
         .about-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(56, 189, 248, 0.1);
-            border-color: #38bdf8;
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.15);
+            border-color: rgba(56, 189, 248, 0.4);
         }
 
         .about-card h3 {
             color: #38bdf8;
             font-size: 22px;
+            font-weight: 700;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
         .about-card p {
-            color: #475569;
-            font-size: 16px;
+            color: #94a3b8;
+            font-size: 15px;
+            line-height: 1.7;
         }
 
         /* SKILLS */
 
         .skills {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 20px;
         }
 
         .skill-box {
-            background: white;
+            background: rgba(17, 26, 46, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             padding: 25px 15px;
             text-align: center;
             border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            font-weight: 700;
+            font-size: 15px;
+            color: #e2e8f0;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.03);
         }
 
         .skill-box svg {
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             color: #38bdf8;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .skill-box:hover {
-            transform: translateY(-8px);
-            background: #38bdf8;
-            color: white;
-            border-color: #38bdf8;
-            box-shadow: 0 12px 24px rgba(56, 189, 248, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            background: rgba(56, 189, 248, 0.08);
+            border-color: rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            box-shadow: 0 15px 30px rgba(56, 189, 248, 0.15);
         }
 
         .skill-box:hover svg {
-            color: white;
-            transform: scale(1.1) rotate(5deg);
+            color: #38bdf8;
+            transform: scale(1.15) rotate(8deg);
         }
 
         /* PROJECTS */
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .project-box {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: 0.3s;
+            background: rgba(17, 26, 46, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .project-box:hover {
-            transform: scale(1.03);
+            transform: translateY(-8px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.15);
         }
 
         .project-box h3 {
             margin-bottom: 15px;
             color: #38bdf8;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .project-box p {
+            color: #94a3b8;
+            font-size: 15px;
+            line-height: 1.7;
         }
 
         /* CERTIFICATES */
@@ -283,12 +354,14 @@
         }
 
         .certificate-card {
-            background: white;
+            background: rgba(17, 26, 46, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.03);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -296,21 +369,21 @@
 
         .certificate-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(56, 189, 248, 0.15);
-            border-color: #38bdf8;
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.15);
         }
 
         .certificate-card h3 {
             margin-bottom: 12px;
             color: #38bdf8;
             font-size: 20px;
-            font-weight: bold;
+            font-weight: 700;
         }
 
         .certificate-card p {
-            color: #475569;
+            color: #94a3b8;
             font-size: 15px;
-            line-height: 1.7;
+            line-height: 1.6;
             flex-grow: 1;
             margin-bottom: 15px;
         }
@@ -318,9 +391,10 @@
         .certificate-card img {
             width: 100%;
             height: auto;
-            border-radius: 12px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
             margin-top: 15px;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .certificate-card:hover img {
@@ -337,80 +411,90 @@
         }
 
         .contact-card {
-            background: white;
-            padding: 30px 20px;
-            border-radius: 20px;
+            background: rgba(17, 26, 46, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 35px 20px;
+            border-radius: 24px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             text-decoration: none;
             color: inherit;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(0, 0, 0, 0.03);
         }
 
         .contact-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(56, 189, 248, 0.15);
-            border-color: #38bdf8;
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.15);
         }
 
         .contact-icon {
             width: 60px;
             height: 60px;
-            background: rgba(56, 189, 248, 0.1);
+            background: rgba(56, 189, 248, 0.08);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 15px;
-            transition: 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             color: #38bdf8;
         }
 
         .contact-card:hover .contact-icon {
             background: #38bdf8;
-            color: white;
-            transform: scale(1.1);
+            color: #060b13;
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
         }
 
         .contact-card h3 {
             font-size: 20px;
-            color: #0f172a;
+            color: #f8fafc;
             margin-bottom: 8px;
+            font-weight: 700;
         }
 
         .contact-card p {
-            font-size: 15px;
-            color: #64748b;
+            font-size: 14px;
+            color: #94a3b8;
             word-break: break-all;
         }
 
         /* FOOTER */
 
         footer {
-            background: #0f172a;
-            color: white;
+            background: #0b0f19;
+            color: #64748b;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 30px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 14px;
         }
 
         /* RESPONSIVE */
 
         @media(max-width:768px) {
-
             nav {
+                border-radius: 20px;
+                padding: 15px 20px;
+                width: 95%;
                 flex-direction: column;
-                gap: 10px;
+                gap: 12px;
+                margin: 10px auto;
             }
 
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 15px;
             }
 
             .home h1 {
@@ -422,8 +506,12 @@
             }
 
             .profile-pic {
-                width: 180px;
-                height: 180px;
+                width: 170px;
+                height: 170px;
+            }
+
+            section {
+                padding: 80px 6%;
             }
         }
     </style>
@@ -509,9 +597,8 @@
                 </h3>
                 <p>
                     Throughout my academic journey, I have successfully developed several projects, including an
-                    <strong>Inventory Management System</strong>, <strong>Mindanao System</strong>, <strong>Manait
-                        Rental System</strong>, and an <strong>OCR-Based Document Tracking and Archival System with AI
-                        and Predictive Analytics</strong>.
+                      <strong>OCR-Based Document Tracking and Archival System with AI
+                        and Predictive Analytics </strong> and  <strong>Manait Rental Room Management System</strong>, which have honed my skills in programming, system design, and problem-solving.
                 </p>
                 <p>
                     These hands-on experiences have sharpened my problem-solving abilities, teamwork, and system
@@ -637,37 +724,40 @@
 
         <div class="projects">
 
+            <div class="project-box">
 
+                <h3>OCR-Based Document Tracking and Archival System with AI and Predictive Analytics for City Government HR Management</h3>
 
+                <p>
+                    A PHP, Flutter, and MySQL-based Document Management System developed for Capstone 1 &amp; 2.
+                    This system manages document tracking, archival processes, and features OCR document digitization with AI-driven analytics.
+                </p>
 
+                <div style="display:flex; gap:15px; margin-top:20px;">
+                    <img src="ocr.png" alt="OCR System Screenshot 1" class="box-pic"
+                        style="width:50%; height:auto; border-radius:12px; border: 1px solid rgba(255,255,255,0.05);">
+                    <img src="ocr1.png" alt="OCR System Screenshot 2" class="box-pic"
+                        style="width:50%; height:auto; border-radius:12px; border: 1px solid rgba(255,255,255,0.05);">
+                </div>
 
-        </div>
-
-        <div class="project-box">
-
-            <h3>OCR-Based Document Tracking and Archival System with AI and Predictive Analytics for City Government HR
-                Management</h3>
-
-            <p>
-                A Php, Flutter , MySql-based Documents Management System
-                developed in Canpston 1 Capstone 2 subjects (Capstone 1 Capstone 2 subjects).
-                This system manages document tracking and Archival System, OCR-Based Document Tracking and Archival
-                System with AI and Predictive Analytics for City Government HR Management
-                .
-            </p>
-
-            <br>
-            <div style="display:flex; gap:15px; margin-top:15px;">
-                <img src="ocr.png" alt="OCR System Screenshot 1" class="box-pic"
-                    style="width:50%; height:auto; border-radius:10px;">
-                <img src="ocr1.png" alt="OCR System Screenshot 2" class="box-pic"
-                    style="width:50%; height:auto; border-radius:10px;">
             </div>
-            <br>
-            <br>
+            <div class="project-box">
 
-        </div>
+                <h3>Manait Rental Room Management System</h3>
 
+                <p>
+                    A PHP, Javascript, and MySQL-based Rental Management System developed for Programming 1 
+                    This system manages Rental System, Room processes, and features Manait Rental Room Management System.
+                </p>
+
+                <div style="display:flex; gap:15px; margin-top:20px;">
+                    <img src="Manait.png" alt="OCR System Screenshot 1" class="box-pic"
+                        style="width:50%; height:auto; border-radius:12px; border: 1px solid rgba(255,255,255,0.05);">
+                    <img src="Manait1.png" alt="OCR System Screenshot 2" class="box-pic"
+                        style="width:50%; height:auto; border-radius:12px; border: 1px solid rgba(255,255,255,0.05);">
+                </div>
+
+            </div>
 
         </div>
 
